@@ -1,14 +1,41 @@
+import { extendTheme } from "@chakra-ui/react";
 import themeType from "./theme.type";
-const theme: themeType = {
+const customTheme: themeType = {
   breakpoints: ["480px", "768px", "1024px", "1920px"],
   // background color opacity
   colors: {
-    primary: ["#DDF7E3", "#A4D0A4"],
+    pallete: {
+      50: "#e9f8e9",
+      100: "#cbe6cb",
+      200: "#abd4ab",
+      300: "#8ac28a",
+      400: "#6ab16a",
+      500: "#509750",
+      600: "#3e763e",
+      700: "#2b542b",
+      800: "#183219",
+      900: "#031303",
+    },
     white: "#fff",
+    primary: ["#e9f8e9", "#2b542b"],
     black: "#000",
   },
   // typography props includes fontFamily fontwight lineheight letterSpacing textAlign fontSize
-  fontSizes: ["13px", "15px", "20px", "24px", "32px", "38px", "50px", "60px"],
+  fontSizes: {
+    xs: "0.75rem",
+    sm: "0.875rem",
+    md: "1rem",
+    lg: "1.125rem",
+    xl: "1.25rem",
+    "2xl": "1.5rem",
+    "3xl": "1.875rem",
+    "4xl": "2.25rem",
+    "5xl": "3rem",
+    "6xl": "3.75rem",
+    "7xl": "4.5rem",
+    "8xl": "6rem",
+    "9xl": "8rem",
+  },
   // space props margin, padding mx, my, mt, mb, mr, ml, m, pt, px, py, pr, pl, p top right left bottom
   space: [
     "0",
@@ -57,7 +84,17 @@ const theme: themeType = {
     "280px",
   ],
   // fontWeight
-  fontWeights: [100, 200, 300, 400, 500, 600, 700, 800, 900],
+  fontWeights: {
+    hairline: 100,
+    thin: 200,
+    light: 300,
+    normal: 400,
+    medium: 500,
+    semibold: 600,
+    bold: 700,
+    extrabold: 800,
+    black: 900,
+  },
   letterSpacing: {
     normal: "normal",
     tracked: "0.1em",
@@ -83,7 +120,23 @@ const theme: themeType = {
     "22px",
     "50%",
   ],
-  ZIndices: [-1, 1, 2, 99, 150],
+  ZIndices: {
+    hide: -1,
+    auto: "auto",
+    base: 0,
+    docked: 10,
+    dropdown: 1000,
+    sticky: 1100,
+    banner: 1200,
+    overlay: 1300,
+    modal: 1400,
+    popover: 1500,
+    skipLink: 1600,
+    toast: 1700,
+    tooltip: 1800,
+  },
   shadows: [],
 };
+
+const theme = extendTheme(customTheme);
 export default theme;
