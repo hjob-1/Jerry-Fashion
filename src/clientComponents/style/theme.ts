@@ -1,6 +1,6 @@
-import { extendTheme } from "@chakra-ui/react";
 import themeType from "./theme.type";
-const customTheme: themeType = {
+
+export const theme: themeType = {
   breakpoints: ["480px", "768px", "1024px", "1920px"],
   // background color opacity
   colors: {
@@ -37,23 +37,23 @@ const customTheme: themeType = {
     "9xl": "8rem",
   },
   // space props margin, padding mx, my, mt, mb, mr, ml, m, pt, px, py, pr, pl, p top right left bottom
-  space: [
-    "0",
-    "5px",
-    "8px",
-    "10px",
-    "12px",
-    "14px",
-    "20px",
-    "25px",
-    "30px",
-    "35px",
-    "40px",
-    "45px",
-    "50px",
-    "55px",
-    "60px",
-  ],
+  // space: [
+  //   "0",
+  //   "5px",
+  //   "8px",
+  //   "10px",
+  //   "12px",
+  //   "14px",
+  //   "20px",
+  //   "25px",
+  //   "30px",
+  //   "35px",
+  //   "40px",
+  //   "45px",
+  //   "50px",
+  //   "55px",
+  //   "60px",
+  // ],
   // layout props  addes width height maxwidth maxheight  minwidht minheight size dispaly verticalalign overflow
   sizes: [
     "20px",
@@ -135,8 +135,75 @@ const customTheme: themeType = {
     toast: 1700,
     tooltip: 1800,
   },
-  shadows: [],
+  shadows: {
+    light: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
+    bottomSide:
+      "rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px",
+    borderShadow: "rgba(0, 0, 0, 0.05) 0px 0px 0px 1px",
+    fourLightBorder: "rgba(0, 0, 0, 0.15) 0px 5px 15px 0px",
+    thickBorder: "rgba(0, 0, 0, 0.18) 0px 2px 4px;",
+  },
+  button: {
+    primary: {
+      color: "white",
+      bg: "pallete.700",
+      "&:hover": {
+        bg: "pallete.800",
+      },
+      px: "6",
+      py: "4",
+      borderRadius: "2",
+      border: "1",
+      borderColor: "pallete.700",
+      fontSize: "md",
+    },
+    outlined: {
+      color: "pallete.700",
+      bg: "transparent",
+      border: "1",
+      px: "6",
+      py: "4",
+      fontSize: "md",
+      borderColor: "pallete.700",
+      "&:hover": {
+        bg: "pallete.700",
+        color: "white",
+      },
+    },
+  },
+  typography: {
+    text: {
+      fontSize: "md",
+    },
+    h1: {
+      fontWeight: "extrabold",
+      fontSize: "4xl",
+    },
+    h2: {
+      fontWeight: "bold",
+      fontSize: "3xl",
+    },
+    h3: {
+      fontWeight: "medium",
+      fontSize: "2xl",
+    },
+  },
+  card: {
+    normal: {
+      padding: "6",
+      "&:hover": {
+        cursor: "pointer",
+      },
+    },
+    rounded: {
+      padding: "6",
+      borderRadius: "3",
+      boxShadow: "thickBorder",
+      "&:hover": {
+        cursor: "pointer",
+      },
+    },
+  },
 };
 
-const theme = extendTheme(customTheme);
 export default theme;

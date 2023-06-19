@@ -45,7 +45,7 @@ export default interface themeType {
     title: number;
     copy: number;
   };
-  space: common;
+  // space: common;
   sizes: common;
   borders: common;
   fontWeights: {
@@ -75,5 +75,19 @@ export default interface themeType {
     toast: number;
     tooltip: number;
   };
-  shadows: string[];
+  shadows: {};
+  button: {
+    primary: {};
+    outlined: {};
+  };
+  typography: {
+    h1: {};
+    h2: {};
+    h3: {};
+    text: {};
+  };
+  card: {
+    normal: {};
+    rounded: {};
+  };
 }
