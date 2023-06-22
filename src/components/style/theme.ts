@@ -1,23 +1,18 @@
-import { extendTheme } from "@chakra-ui/react";
 import themeType from "./theme.type";
-const customTheme: themeType = {
+
+export const theme: themeType = {
   breakpoints: ["480px", "768px", "1024px", "1920px"],
   // background color opacity
   colors: {
     pallete: {
-      50: "#e9f8e9",
-      100: "#cbe6cb",
-      200: "#abd4ab",
-      300: "#8ac28a",
-      400: "#6ab16a",
-      500: "#509750",
-      600: "#3e763e",
-      700: "#2b542b",
-      800: "#183219",
-      900: "#031303",
+      10: "#E9EDE1",
+      20: "#869560",
+      30: "#999999",
+      40: "#E7F3E7",
+      50: "#58595B",
     },
     white: "#fff",
-    primary: ["#e9f8e9", "#2b542b"],
+    primary: ["#E7F3E7", "#869560"],
     black: "#000",
   },
   // typography props includes fontFamily fontwight lineheight letterSpacing textAlign fontSize
@@ -33,7 +28,7 @@ const customTheme: themeType = {
     "5xl": "3rem",
     "6xl": "3.75rem",
     "7xl": "4.5rem",
-    "8xl": "6rem",
+    "8xl": "6.25rem",
     "9xl": "8rem",
   },
   // space props margin, padding mx, my, mt, mb, mr, ml, m, pt, px, py, pr, pl, p top right left bottom
@@ -135,8 +130,14 @@ const customTheme: themeType = {
     toast: 1700,
     tooltip: 1800,
   },
-  shadows: [],
+  shadows: {
+    light: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
+    bottomSide:
+      "rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px",
+    borderShadow: "rgba(0, 0, 0, 0.05) 0px 0px 0px 1px",
+    fourLightBorder: "rgba(0, 0, 0, 0.15) 0px 5px 15px 0px",
+    thickBorder: "rgba(0, 0, 0, 0.18) 0px 2px 4px;",
+  },
 };
 
-const theme = extendTheme(customTheme);
 export default theme;
