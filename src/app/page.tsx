@@ -1,5 +1,4 @@
-"use client";
-import Hero from "@/clientComponents/containers/hero/hero";
+import Hero from "@/components/containers/hero/hero";
 
 export default function Home() {
   return (

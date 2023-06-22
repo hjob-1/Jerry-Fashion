@@ -1,7 +1,7 @@
+import { Providers } from "@/components/style/themeProvider";
 import "./global.css";
 import { Inter } from "next/font/google";
-import { Providers } from "@style/themeProvider";
-import Nav from "@/clientComponents/containers/navbar/nav";
+import Nav from "@/components/containers/navbar/nav";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
