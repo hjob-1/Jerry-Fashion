@@ -1,11 +1,15 @@
-import styled from "@emotion/styled";
-import { flex, variant } from "styled-system";
+import styled from "styled-components";
+import { variant } from "styled-system";
 import { cardProp } from "../types";
 import { Box } from "../box/box";
 
 export const Flex = styled(Box)<cardProp>`
   display: flex;
-  ${flex}
+  justify-content: ${(props) => props.justifyContent};
+  align-items: ${(props) => props.alignItems};
+  flex-direction: ${(props) => props.flexDirection};
+  flex: ${(props) => props.flex};
+  flex-wrap: ${(props) => props.flexWrap};
   ${variant({
     variants: {
       normal: {
@@ -23,5 +27,5 @@ export const Flex = styled(Box)<cardProp>`
         },
       },
     },
-  })}
+  })};
 `;

@@ -1,7 +1,8 @@
-import styled from "@emotion/styled";
+import styled from "styled-components";
 import {
   border,
   color,
+  compose,
   fontSize,
   layout,
   space,
@@ -9,12 +10,14 @@ import {
   variant,
 } from "styled-system";
 import { buttonProp } from "../types";
-import theme from "@/components/style/theme";
+import shouldForwardProp from "@/utils/forwardProp";
 
-export const Sbutton = styled.button<buttonProp>`
+export const Sbutton = styled("button").withConfig({
+  shouldForwardProp: (prop) => shouldForwardProp(prop),
+})<buttonProp>`
   cursor: "pointer";
-  ${color} ${typography} ${fontSize} ${layout} ${space} ${border}
-      ${variant({
+  ${compose(color, typography, fontSize, layout, space, border)}
+  ${variant({
     variants: {
       primary: {
         color: "white",
@@ -30,15 +33,15 @@ export const Sbutton = styled.button<buttonProp>`
         fontSize: "md",
       },
       outlined: {
-        color: "primary.1",
+        color: "green900",
         bg: "transparent",
-        border: "1",
-        px: "6",
-        py: "4",
+        border: "thick",
+        borderColor: "green900",
+        px: "xl",
+        py: "md",
         fontSize: "md",
-        borderColor: "pallete.50",
         "&:hover": {
-          bg: "primary.1",
+          bg: "green900",
           color: "white",
         },
       },

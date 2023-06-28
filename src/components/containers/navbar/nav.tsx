@@ -9,18 +9,24 @@ interface Props {}
 const Nav = (props: Props) => {
   return (
     <Box>
-      <Text bg="pallete.20" py="1" fontSize="sm" textAlign="center">
+      <Text bg="green900" py="xs" fontSize="sm" textAlign="center">
         Special Discount for Familys and couples orders
       </Text>
-      <Flex justifyContent="flex-end" px="28" py="5" border="2px solid red">
+      <Flex
+        justifyContent="space-between"
+        px="6xl"
+        height="8"
+        alignItems="center"
+      >
         <Text>Logo</Text>
         <Box>
           {links.map((link) => (
             <Navigate
               key={link.name}
               href={link.to}
-              mr="5"
+              mr="16"
               textDecoration="none"
+              fontSize="lg"
             >
               {link.name}
             </Navigate>

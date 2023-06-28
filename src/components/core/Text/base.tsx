@@ -1,7 +1,8 @@
-import styled from "@emotion/styled";
+import styled from "styled-components";
 import {
   border,
   color,
+  compose,
   fontSize,
   layout,
   space,
@@ -9,26 +10,24 @@ import {
   variant,
 } from "styled-system";
 import { textProp } from "../types";
+import shouldForwardProp from "@/utils/forwardProp";
 
-export const Stext = styled.p<textProp>`
-  ${color}
-  ${typography}
-${fontSize}
-${layout}
-${space}
-${border}
-${variant({
+export const Stext = styled("p").withConfig({
+  shouldForwardProp: (prop) => shouldForwardProp(prop),
+})<textProp>`
+  ${compose(color, typography, fontSize, layout, space, border)}
+  ${variant({
     variants: {
       text: {
         fontSize: "md",
       },
       h1: {
         fontWeight: "semibold",
-        fontSize: "8xl",
+        fontSize: "heading",
       },
       h2: {
         fontWeight: "bold",
-        fontSize: "6xl",
+        fontSize: "7xl",
       },
       h3: {
         fontWeight: "medium",

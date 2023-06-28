@@ -36,9 +36,34 @@ export interface textProp extends sharedTypes {
 }
 export interface cardProp extends sharedTypes {
   variant?: "rounded" | "normal";
-  alignItems?: string;
-  justifyContent?: string;
+  alignItems?:
+    | "center"
+    | "flex-end"
+    | "flex-start"
+    | "space-between"
+    | "space-around"
+    | "space-evenly";
+  justifyContent?:
+    | "center"
+    | "flex-end"
+    | "flex-start"
+    | "space-between"
+    | "space-around"
+    | "space-evenly";
   alignSelf?: string;
   justifySelf?: string;
   flexDirection?: string;
+  flex?: string;
+  flexShrink?: string;
+  flexWrap?: string;
+  flexGrow?: string;
+  alignContent?: string;
+}
+
+export interface gridType extends sharedTypes {
+  gridTemplateColumns?: string;
+  gridTemplateRows?: string;
+  gridGap?: string;
+  rowGap?: string;
+  columnGap?: string;
 }

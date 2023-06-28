@@ -1,7 +1,11 @@
-import { Providers } from "@/components/style/themeProvider";
+import StyledComponentsRegistry, {
+  Providers,
+} from "@/components/style/themeProvider";
 import "./global.css";
 import { Inter } from "next/font/google";
 import Nav from "@/components/containers/navbar/nav";
+import "./global.css";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -16,12 +20,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <Providers>
-          <Nav />
-          {children}
-        </Providers>
-      </body>
+      <StyledComponentsRegistry>
+        <body className={inter.className}>
+          <Providers>
+            <Nav />
+            {children}
+          </Providers>
+        </body>
+      </StyledComponentsRegistry>
     </html>
   );
 }
